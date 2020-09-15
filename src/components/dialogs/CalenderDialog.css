@@ -1,0 +1,12 @@
+.MuiDialog-paperWidthSm {
+    max-width: 60% !important;
+}
+
+.MuiGrid-spacing-xs-1 > .MuiGrid-item {
+    padding: 0 !important;
+}
+
+.MuiSelect-outlined.MuiSelect-outlined {
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
+}

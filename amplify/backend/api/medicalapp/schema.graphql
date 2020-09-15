@@ -1,0 +1,63 @@
+type Calender @model
+  @auth(rules: [{ allow: owner, operations: [create, delete, update] }]) {
+  id: ID!
+  doctorID: String!
+  medicalID: String!
+  cityID: String!
+  doctor: String!
+  medical: String!
+  city: String!
+  startDate: String!
+  endDate: String!
+  times: [Time!]!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type City @model
+  @auth(rules: [{ allow: owner, operations: [create, delete, update] }]) {
+  id: ID!
+  city: String!
+  street: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Medical @model
+  @auth(rules: [{ allow: owner, operations: [create, delete, update] }]) {
+  id: ID!
+  medical: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Doctor @model
+  @auth(rules: [{ allow: owner, operations: [create, delete, update] }]) {
+  id: ID!
+  firstname: String!
+  surname: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Visit @model
+  @auth(rules: [{ allow: owner, operations: [create] }]) {
+  id:ID!
+  userEmail: String!
+  doctorID: String!
+  medicalID: String!
+  cityID: String!
+  doctor: String!
+  medical: String!
+  city: String!
+  startDate: String!
+  endDate: String!
+  times: [Time!]!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Time {
+    startTime: String!
+    endTime: String!
+}
